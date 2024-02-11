@@ -42,11 +42,6 @@ jobs:
     name: Test
     needs: gradleValidation
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental }}
-    env:
-      ORG_GRADLE_PROJECT_platformVersion: ${{ matrix.platform }}
-      ORG_GRADLE_PROJECT_phpPluginVersion: ${{ matrix.phpPlugin }}
-      ORG_GRADLE_PROJECT_bladePluginVersion: ${{ matrix.bladePlugin }}
     steps:
 
       # Setup Java 1.8 environment for the next steps
@@ -87,15 +82,6 @@ jobs:
     name: Build
     needs: test
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental }}
-    env:
-      ORG_GRADLE_PROJECT_platformVersion: ${{ matrix.platform }}
-      ORG_GRADLE_PROJECT_phpPluginVersion: ${{ matrix.phpPlugin }}
-      ORG_GRADLE_PROJECT_bladePluginVersion: ${{ matrix.bladePlugin }}
-    outputs:
-      name: ${{ steps.properties.outputs.name }}
-      version: ${{ steps.properties.outputs.version }}
-      artifact: ${{ steps.properties.outputs.artifact }}
     steps:
 
       # Setup Java 1.8 environment for the next steps
