@@ -1,0 +1,60 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>ir.xstack.loremfa</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Loremfa</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="farzad@live.se" url="https://www.xstack.ir">xStack</vendor>
+
+    <version>1.0</version>
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    <h1> Persian lorem ipsum - loremfa </h1>
+    <br>
+    <a href="https://github.com/4xmen/loremfa/issues">Issues</a> | <a href="https://www.paypal.me/swepc">Donate</a>
+
+<h2>Features</h2>
+      <ul>
+        <li> Lorem fa generator in menu/li>
+        <li> `loremfa` in editor generate lorem ipsum persian </li>
+        <li> `loremfa99` in editor generate lorem ipsum persian depends on word count  </li>
+      </ul>
+
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <typedHandler implementation="ir.xstack.loremfa.LoremEditor"/>
+    </extensions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <typedHandler implementation="ir.xstack.loremfa.LoremFaShortTypedHandler"/>
+    </extensions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <typedHandler implementation="ir.xstack.loremfa.LoremFaGenerateTypedHandler"/>
+    </extensions>
+
+    <actions>
+        <group id="loremfa.lorem" text="loremfa" description="Persian lorem impsum">
+            <add-to-group group-id="EditMenu" anchor="last"></add-to-group>
+            <action class="ir.xstack.loremfa.LoremShort" id="Loremfa.Actions.Lorem" text="loremfa"></action>
+<!--            <action class="ir.xstack.loremfa.LoremShort" id="Loremfa.Actions.LoremShort" text="loremfa short"></action>-->
+            <action id="ir.xstack.loremfa.GenerateLoremDialogAction" class="ir.xstack.loremfa.GenerateLoremDialogAction"
+                    text="Generate Lorem persian" description="Opens a dialog to get Count word and generate persian Lorem.">
+                <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            </action>
+        </group>
+    </actions>
+</idea-plugin>
