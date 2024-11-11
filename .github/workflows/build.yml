@@ -1,6 +1,6 @@
 # GitHub Actions Workflow created for testing and preparing the plugin release in following steps:
 # - validate Gradle Wrapper,
-# - run test and verifyPlugin tasks,
+# - run ir.xstack.loremfa.test and verifyPlugin tasks,
 # - run buildPlugin task and prepare artifact for the further tests,
 # - run IntelliJ Plugin Verifier,
 # - create a draft release.
@@ -37,8 +37,8 @@ jobs:
       - name: Gradle Wrapper Validation
         uses: gradle/wrapper-validation-action@v1.0.3
 
-  # # Run verifyPlugin and test Gradle tasks
-  # test:
+  # # Run verifyPlugin and ir.xstack.loremfa.test Gradle tasks
+  # ir.xstack.loremfa.test:
   #   name: Test
   #   needs: gradleValidation
   #   runs-on: ubuntu-latest
@@ -77,10 +77,10 @@ jobs:
   #       run: ./gradlew verifyPlugin
 
   # Build plugin with buildPlugin Gradle task and provide the artifact for the next workflow jobs
-  # Requires test job to be passed
+  # Requires ir.xstack.loremfa.test job to be passed
   build:
     name: Build
-    # needs: test
+    # needs: ir.xstack.loremfa.test
     runs-on: ubuntu-latest
     steps:
 

@@ -2,7 +2,7 @@
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
-!**/src/test/**/build/
+!**/src/ir.xstack.loremfa.test/**/build/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -14,7 +14,7 @@ build/
 *.ipr
 out/
 !**/src/main/**/out/
-!**/src/test/**/out/
+!**/src/ir.xstack.loremfa.test/**/out/
 
 ### Eclipse ###
 .apt_generated
@@ -26,7 +26,7 @@ out/
 .sts4-cache
 bin/
 !**/src/main/**/bin/
-!**/src/test/**/bin/
+!**/src/ir.xstack.loremfa.test/**/bin/
 
 ### NetBeans ###
 /nbproject/private/
