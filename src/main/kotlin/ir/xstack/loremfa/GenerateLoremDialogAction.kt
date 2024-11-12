@@ -9,7 +9,6 @@ import com.intellij.openapi.command.WriteCommandAction
 class GenerateLoremDialogAction : AnAction() {
 
 
-
     override fun actionPerformed(e: AnActionEvent) {
 
         val editor = e.getData(PlatformDataKeys.EDITOR)

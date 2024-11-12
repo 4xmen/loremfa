@@ -46,10 +46,14 @@
         <typedHandler implementation="ir.xstack.loremfa.LoremFaGenerateTypedHandler"/>
     </extensions>
 
+    <extensions defaultExtensionNs="com.intellij">
+        <typedHandler implementation="ir.xstack.loremfa.LoremTypedHandlerDelegate"/>
+    </extensions>
+
     <actions>
         <group id="loremfa.lorem" text="loremfa" description="Persian lorem impsum">
-            <add-to-group group-id="EditMenu" anchor="last"></add-to-group>
-            <action class="ir.xstack.loremfa.LoremShort" id="Loremfa.Actions.Lorem" text="loremfa"></action>
+            <add-to-group group-id="EditMenu" anchor="last"/>
+            <action class="ir.xstack.loremfa.LoremShort" id="Loremfa.Actions.Lorem" text="loremfa"/>
 <!--            <action class="ir.xstack.loremfa.LoremShort" id="Loremfa.Actions.LoremShort" text="loremfa short"></action>-->
             <action id="ir.xstack.loremfa.GenerateLoremDialogAction" class="ir.xstack.loremfa.GenerateLoremDialogAction"
                     text="Generate Lorem persian" description="Opens a dialog to get Count word and generate persian Lorem.">

@@ -4,11 +4,9 @@ import com.intellij.codeInsight.editorActions.TypedHandlerDelegate
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.project.Project
-import com.intellij.openapi.actionSystem.DataContext
 import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.psi.PsiFile
 import java.io.BufferedReader
-import java.io.InputStreamReader
 import java.nio.charset.StandardCharsets
 
 class LoremFaGenerateTypedHandler : TypedHandlerDelegate() {
